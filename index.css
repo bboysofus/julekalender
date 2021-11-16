@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
-@font-face {font-family: Press-Start; src: url(fonts/press-start.ttf);}
-@font-face {font-family: Pokemon DP; src: url(fonts/Pokemon\ DP/pokemon-dp-pro.ttf);}
-@font-face {font-family: Pokemon GB; src: url(fonts/GB.ttf);}
-@font-face {font-family: NintendoDS; src: url(fonts/NintendoDS.ttf);}
-@font-face {font-family: NintendoSwitch; src: url(fonts/NintendoSwitch.ttf);}
+@font-face {font-family: Press-Start; src: url(./assets/fonts/press-start.ttf);}
+@font-face {font-family: Pokemon DP; src: url(./assets/fonts/Pokemon\ DP/pokemon-dp-pro.ttf);}
+@font-face {font-family: Pokemon GB; src: url(./assets/fonts/GB.ttf);}
+@font-face {font-family: NintendoDS; src: url(./assets/fonts/NintendoDS.ttf);}
+@font-face {font-family: NintendoSwitch; src: url(./assets/fonts/NintendoSwitch.ttf);}
 
 *{
     margin: 0;

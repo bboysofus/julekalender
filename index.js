@@ -1,6 +1,6 @@
 PS = document.querySelector('#press-start')
 
-let PS_Sound = new Audio('./sounds/PS_Sound.mp3')
+let PS_Sound = new Audio('./assets/sounds/PS_Sound.mp3')
 
 let intervalID = null
 let letCounter = 1
