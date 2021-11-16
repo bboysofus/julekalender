@@ -23,6 +23,8 @@ body{
 }
 
 #press-start{
+    transition: all .2s ease-in-out;
     font-family: Press-Start;
     font-size: 3rem;
+    color: white;
 }
