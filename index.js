@@ -18,15 +18,17 @@ let pressStartFlickering = () => {
 intervalID = setInterval(pressStartFlickering, 500)
 
 const pressStartPressed = () => {
-    
+    PS.style.transition = 'all 1s'
+    PS.style.visibility = 'hidden'  
 }
 
 window.addEventListener("keydown", event => {
     if(event.keyCode === 13 || event.keyCode === 32){
+        PS.style.transition = 'all 0s'
         letCounter = 0
         PS_Sound.play()
         PS.style.color = "chartreuse"
-        PS.style.transition = 'all 1s'
-        PS.style.opacity = '0'
+        pressStartPressed()
     }
 })
+
