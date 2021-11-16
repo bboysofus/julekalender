@@ -1,6 +1,6 @@
 PS = document.querySelector('#press-start')
 
-let PS_Sound = new Audio('./assets/sounds/PS_Sound.mp3')
+let PSSound = new Audio('./assets/sounds/PSSound.mp3')
 
 let intervalID = null
 let letCounter = 1
@@ -26,7 +26,7 @@ window.addEventListener("keydown", event => {
     if(event.keyCode === 13 || event.keyCode === 32){
         PS.style.transition = 'all 0s'
         letCounter = 0
-        PS_Sound.play()
+        PSSound.play()
         PS.style.color = "chartreuse"
         pressStartPressed()
     }
