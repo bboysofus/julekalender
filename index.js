@@ -18,8 +18,13 @@ const typeWriter = () => {
   }
 }
 
-const dialog = () => {
+const dialogIn = () => {
     document.querySelector('#text-box-parent').style.animation = 'hoverIn .1s ease-in'
+    document.querySelector('#text-box-parent').style.animationFillMode = 'forwards'
+}
+
+const dialogOut = () => {
+    document.querySelector('#text-box-parent').style.animation = 'hoverOut .1s ease-out'
     document.querySelector('#text-box-parent').style.animationFillMode = 'forwards'
 }
 
@@ -33,7 +38,7 @@ window.addEventListener("keyup", event => {
         PS.style.animationFillMode = 'forwards'
         if(n == 1){
             PSSound.play()
-            setTimeout(dialog, 1500)
+            setTimeout(dialogIn, 1500)
             setTimeout(typeWriter, typeTid)
             setTimeout(enterArrow, 2980)
         }
@@ -55,6 +60,7 @@ window.addEventListener("keyup", event => {
             enterArrowSound.play()
             document.querySelector('#enter-arrow').style.opacity = '0'
             document.querySelector('#text-box-text').innerHTML = ''
+            dialogOut()
             body.style.background = 'red'
         }
     }

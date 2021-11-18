@@ -123,3 +123,12 @@ body{
         transform: scale(100%);
     }
 }
+
+@keyframes hoverOut{
+    0%{
+        transform: scale(100%);
+    }
+    100%{
+        transform: scale(0%);
+    }
+}
