@@ -17,7 +17,7 @@ body{
     height: 100vh;
     display: grid;
     place-items: center;
-    background: black;
+    background: #000000;
     color: white;
     font-size: 4rem;
     text-align: center;
@@ -29,6 +29,60 @@ body{
     font-size: 3rem;
     color: white;
     animation: flicker 1s ease-in infinite;
+    user-select: none;
+}
+
+#theme-select-text{
+    opacity: 0%;
+    position: absolute;
+    top: 10rem;
+    font-size: 3rem;
+    font-family: Press-Start;
+    user-select: none;
+}
+
+#theme-select-parent{
+    position: absolute;
+    z-index: -99;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    top: 25rem;
+    gap: 10rem;
+    user-select: none;
+}
+
+#theme-select1{
+    opacity: 0%;
+    transition: .2s all ease-in-out;
+    background: blue;
+    color: black;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    border: 3px solid white;
+    font-size: 3rem;
+    font-family: Press-Start;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+#theme-select2{
+    opacity: 0%;
+    transition: .2s all ease-in-out;
+    background: red;
+    color: black;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    border: 3px solid white;
+    font-size: 3rem;
+    font-family: Press-Start;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
     user-select: none;
 }
 
@@ -130,5 +184,28 @@ body{
     }
     100%{
         transform: scale(0%);
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes popIn{
+    0%{
+        opacity: 0%;
+        transform: scale(0%);
+    }
+    70%{
+        transform: scale(110%);
+    }
+    100%{
+        opacity: 100%;
+        transform: scale(100%);
     }
 }
