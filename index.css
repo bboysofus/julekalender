@@ -12,15 +12,24 @@
     font-family: "NintendoSwitch";
 }
 
+img{
+    position: absolute;
+    opacity: 0%;
+    z-index: 1;
+    transition: .3s all ease-in-out;
+}
+
 body{
+    background: #000000;
+    transition: .2s all ease-in-out;
     overflow: hidden;
     height: 100vh;
     display: grid;
     place-items: center;
-    background: #000000;
     color: white;
     font-size: 4rem;
     text-align: center;
+    z-index: 0;
 }
 
 #press-start{
@@ -32,28 +41,29 @@ body{
     user-select: none;
 }
 
-#theme-select-text{
-    opacity: 0%;
+#theme-select-parent{
+    opacity: 0;
+    z-index: -1;
     position: absolute;
-    top: 10rem;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    gap: 10rem;
+    user-select: none;
+}
+
+#theme-select-text{
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    bottom: 30rem;
     font-size: 3rem;
     font-family: Press-Start;
     user-select: none;
 }
 
-#theme-select-parent{
-    position: absolute;
-    z-index: -99;
-    display: grid;
-    grid-auto-flow: column;
-    place-items: center;
-    top: 25rem;
-    gap: 10rem;
-    user-select: none;
-}
-
 #theme-select1{
-    opacity: 0%;
+    opacity: 0;
     transition: .2s all ease-in-out;
     background: blue;
     color: black;
@@ -61,7 +71,7 @@ body{
     width: 20rem;
     border-radius: 50%;
     border: 3px solid white;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: Press-Start;
     display: grid;
     place-items: center;
@@ -70,15 +80,15 @@ body{
 }
 
 #theme-select2{
-    opacity: 0%;
+    opacity: 0;
     transition: .2s all ease-in-out;
-    background: red;
+    background: rgb(255, 134, 199);
     color: black;
     height: 20rem;
     width: 20rem;
     border-radius: 50%;
     border: 3px solid white;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: Press-Start;
     display: grid;
     place-items: center;

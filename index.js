@@ -1,6 +1,7 @@
 PS = document.querySelector('#press-start')
 body = document.querySelector('body')
 
+
 let PSSound = new Audio('./assets/sounds/PSSound.mp3')
 let enterArrowSound = new Audio('./assets/sounds/AButton.mp3')
 
@@ -10,24 +11,26 @@ let txt = 'Hello there! Its so very nice to meet you!' /* The text */
 let speed = 30 /* The speed/duration of the effect in milliseconds */
 let typeTid = 1700
 
+let busy = false
+
 const blueIn = () => {
-    document.getElementById('theme-select1').style.transform = 'scale(105%)'
-    body.style.background = '#0a0035'
+    document.querySelector('#theme-select1').style.transform = 'scale(105%)'
+    document.getElementById('dialga').style.opacity = '50%'
 }
 
 const blueOut = () => {
-    document.getElementById('theme-select1').style.transform = 'scale(100%)'
-    body.style.background = 'black'
+    document.querySelector('#theme-select1').style.transform = 'scale(100%)'
+    document.getElementById('dialga').style.opacity = '0'
 }
 
 const redIn = () => {
-    document.getElementById('theme-select2').style.transform = 'scale(105%)'
-    body.style.background = '#350000'
+    document.querySelector('#theme-select2').style.transform = 'scale(105%)'
+    document.getElementById('palkia').style.opacity = '50%'
 }
 
 const redOut = () => {
-    document.getElementById('theme-select2').style.transform = 'scale(100%)'
-    body.style.background = 'black'
+    document.querySelector('#theme-select2').style.transform = 'scale(100%)'
+    document.getElementById('palkia').style.opacity = '0'
 }
 
 
@@ -58,22 +61,27 @@ const themeSelectScreen = () => {
     document.getElementById('theme-select-text').style.animation = 'fadeIn .5s ease-in'
     document.getElementById('theme-select-text').style.animationFillMode = 'forwards'
     document.getElementById('theme-select-parent').style.opacity = '100'
-    document.getElementById('theme-select-parent').style.zIndex = '1'
+    document.getElementById('theme-select-parent').style.zIndex = '2'
+    document.getElementById('theme-select1').style.zIndex = '2'
+    document.getElementById('theme-select2').style.zIndex = '2'
+    document.getElementById('theme-select-text').style.zIndex = '2'
     body.style.transition = '.2s all ease-in-out'
-    setTimeout(event => {
+    setTimeout(() => {
         document.getElementById('theme-select1').style.animation = 'popIn .5s ease-in-out'
         document.getElementById('theme-select1').style.animationFillMode = 'forwards'
     }, 500)
-    setTimeout(event => {
+    setTimeout(() => {
         document.getElementById('theme-select2').style.animation = 'popIn .5s ease-in-out'
         document.getElementById('theme-select2').style.animationFillMode = 'forwards'
     }, 800)
 }
 
-window.addEventListener("keyup", event => {
+document.addEventListener("keyup", event => {
     if(event.keyCode === 13 || event.keyCode === 32){
         PS.style.animation = 'vanish 1.5s'
         PS.style.animationFillMode = 'forwards'
+        if(busy)return
+        busy = true
         if(n == 1){
             PSSound.play()
             setTimeout(dialogIn, 1500)
@@ -104,8 +112,9 @@ window.addEventListener("keyup", event => {
             n = 3
         }
         if(n == 3){
+            n = 4
             setTimeout(themeSelectScreen, 700)
         }
     }
-    
+    busy = false
 })
