@@ -68,12 +68,13 @@ img{
     grid-row-start: 1;
     padding: 10rem;
     padding-bottom: 15rem;
+    gap: 5rem;
 }
 
 #theme-select-text{
     opacity: 0;
     z-index: -1;
-    font-size: 90%;
+    font-size: 3.5rem;
     font-family: Press-Start;
     user-select: none;
 }
@@ -178,6 +179,19 @@ img{
 @media screen and (max-width: 1345px){
     #text-box-text{
         font-size: 1.5rem;
+    }
+    #theme-select1{
+        font-size: 1.5rem;
+        height: 15rem;
+        width: 15rem;
+    }
+    #theme-select2{
+        font-size: 1.5rem;
+        height: 15rem;
+        width: 15rem;
+    }
+    #theme-select-text{
+        font-size: 2.5rem;
     }
 }
 

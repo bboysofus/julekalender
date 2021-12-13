@@ -11,8 +11,6 @@ let txt = 'Hello there! Its so very nice to meet you!' /* The text */
 let speed = 30 /* The speed/duration of the effect in milliseconds */
 let typeTid = 1700
 
-let busy = false
-
 const blueIn = () => {
     document.querySelector('#theme-select1').style.transform = 'scale(105%)'
     document.getElementById('dialga').style.opacity = '50%'
@@ -77,11 +75,16 @@ const themeSelectScreen = () => {
 }
 
 document.addEventListener("keyup", event => {
-    if(event.keyCode === 13 || event.keyCode === 32){
+    
+})
+
+let busy = false
+
+const doSomethingThatTakesSomeTime = async () => {
+busy = true
+let result = () => {
         PS.style.animation = 'vanish 1.5s'
         PS.style.animationFillMode = 'forwards'
-        if(busy)return
-        busy = true
         if(n == 1){
             PSSound.play()
             setTimeout(dialogIn, 1500)
@@ -99,7 +102,7 @@ document.addEventListener("keyup", event => {
             if(txt == 'Welcome to the PokéCalender!' && n == 0){
                 typeWriter()
                 setTimeout(enterArrow, 0 + typeTid)
-                n = 2
+                setTimeout(n=2,5000)
             }
         }
         if(document.querySelector('#enter-arrow').style.opacity == '100' && n == 2){
@@ -117,4 +120,18 @@ document.addEventListener("keyup", event => {
         }
     }
     busy = false
+    return result()
+}
+
+document.addEventListener('keyup', async ()=>{
+if(busy){
+console.log('busy true, returning without executing')
+return
+}
+
+//vi kommer kun hertil hvis busy er false
+
+console.log('eventlistener begin')
+let res = await doSomethingThatTakesSomeTime()
+console.log('eventlistener end')
 })
