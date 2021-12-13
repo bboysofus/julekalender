@@ -2,6 +2,7 @@ PS = document.querySelector('#press-start')
 body = document.querySelector('body')
 
 
+
 let PSSound = new Audio('./assets/sounds/PSSound.mp3')
 let enterArrowSound = new Audio('./assets/sounds/AButton.mp3')
 
@@ -135,3 +136,4 @@ console.log('eventlistener begin')
 let res = await doSomethingThatTakesSomeTime()
 console.log('eventlistener end')
 })
+
