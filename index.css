@@ -125,7 +125,7 @@ img{
     transition: .1s all ease-in;
     display: grid;
     width: 55%;
-    height: 15%;
+    height: 10rem;
     place-items: center;
     background: linear-gradient(#5d6a6e, #434c51);
     transform: scale(0%);
@@ -150,7 +150,7 @@ img{
 #text-box-text{
     color: black;
     font-weight: bolder;
-    font-size: 2.7rem;
+    font-size: 2.5rem;
     text-shadow: 1px 1px 1px black;
     user-select: none;
 }
@@ -167,6 +167,18 @@ img{
 #enter-arrow svg{
     transform: scale(290%);
     filter: drop-shadow( 1px 1px 1px black);
+}
+
+@media screen and (max-width: 1660px){
+    #text-box-text{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1345px){
+    #text-box-text{
+        font-size: 1.5rem;
+    }
 }
 
 @keyframes hoverUpDown{
