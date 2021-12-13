@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julekalender</title>
+    <title>Pokékalender</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div id="theme-select-parent">
-        <h1 id="theme-select-text">Choose a theme</h1>
-        <div id="theme-select1" onmouseover="blueIn()" onmouseout="blueOut()">DIALGA</div>
-        <div id="theme-select2" onmouseover="redIn()" onmouseout="redOut()">PALKIA</div>
+    <div id="img-wrapper">
         <img id="dialga" src="./assets/img/dialga.jpg">
         <img id="palkia" src="./assets/img/palkia.jpg">
+    </div>
+    <div id="theme-select-parent">
+        <h1 id="theme-select-text">Choose a theme</h1>
+        <div id="theme-select-wrapper">
+            <div id="theme-select1" onmouseover="blueIn()" onmouseout="blueOut()">DIALGA</div>
+            <div id="theme-select2" onmouseover="redIn()" onmouseout="redOut()">PALKIA</div>
+        </div>
     </div>
     <h1 id="press-start">Press Start</h1>
     <div id="text-box-parent">
         <div id="text-box">
             <p id="text-box-text"></p>
-            <p id="text-box-text2"></p>
         </div>
         <span id="enter-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
